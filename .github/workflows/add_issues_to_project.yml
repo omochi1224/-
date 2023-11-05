@@ -1,17 +1,18 @@
 # .github/workflows/add_issues_to_project.yml
 
-name: Add issues to project
+name: Issue Project Automation
 
 on:
   issues:
-    types: [opened]
+    types: [opened, reopened, labeled]
 
 jobs:
-  add-to-project:
-    name: Add issue to project
+  automate-project:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/add-to-project@v0.4.0
-        with:
-          project-url: https://github.com/users/omochi1224/projects/5/
-          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
+    - name: Add to Project
+      uses: srggrs/assign-one-project-github-action@1.2.1
+      with:
+        project: '引っ越しに必要なもの'
+        column: '買い出し前'
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
