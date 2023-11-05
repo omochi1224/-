@@ -2,7 +2,7 @@
 name: アイテム購入タスク
 about: 個別のアイテム購入に関するIssue用テンプレート
 title: "購入: [アイテム名]"
-labels: 買い出し前
+labels: 
 assignees: ''
 
 ---
